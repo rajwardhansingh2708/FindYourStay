@@ -2908,13 +2908,15 @@ const toggleCompareProperty = (property) => {
 
     <div className="owner-contact-number">
       <span>Mobile number</span>
-      <strong>+91 98765 43210</strong>
+      <strong>
+  {selectedProperty.contactNumber || "Contact number unavailable"}
+</strong>
     </div>
 
     <a
-      className="owner-call-button"
-      href="tel:+919876543210"
-    >
+  className="owner-call-button"
+  href={`tel:${(selectedProperty.contactNumber || "").replace(/\s+/g, "")}`}
+>
       <span>📞</span>
       Call owner
     </a>
